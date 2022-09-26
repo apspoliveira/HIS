@@ -30,10 +30,14 @@ UINT32 multiplication ( UINT32 input_1, UINT32 input_2, BOOLEAN * valid) {
 }
 
 UINT32 division ( UINT32 input_1, UINT32 input_2, BOOLEAN * valid) {
-    if (input_1 < 0 || input_1 > 200 || input_2 < 0 || input_2 > 200)
+    if (input_1 < 0 || input_1 > 200 || input_2 < 0 || input_2 > 200) {
         *valid = FALSE;
-    else if (input_2 == 0)
+        return 0;
+    }
+    else if (input_2 == 0) {
         *valid = FALSE;
+        return 0;
+    }
     else 
         *valid = TRUE;
     
